@@ -1,0 +1,1 @@
+global.rhea = require('rhea');

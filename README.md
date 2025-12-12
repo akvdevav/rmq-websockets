@@ -43,9 +43,6 @@ Here are a few ways to quickly spin up a local web server:
 
 1.  Open your terminal or command prompt.
 2.  Navigate to the project root directory:
-    ```bash
-    cd /Users/avannala/Documents/workspace/rmq-websockets
-    ```
 3.  Run the Python HTTP server:
     ```bash
     python -m http.server 8000
@@ -60,9 +57,6 @@ Here are a few ways to quickly spin up a local web server:
     ```
 2.  Open your terminal or command prompt.
 3.  Navigate to the project root directory:
-    ```bash
-    cd /Users/avannala/Documents/workspace/rmq-websockets
-    ```
 4.  Run `http-server`:
     ```bash
     http-server
