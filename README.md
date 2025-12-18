@@ -78,13 +78,3 @@ Here are a few ways to quickly spin up a local web server:
     *   Click "Unsubscribe" to stop receiving messages.
 5.  **Disconnect:** Click the "Disconnect" button to close the AMQP connection.
 
-
-
-
-
----
-
-I hope this detailed `README.md` provides a comprehensive overview of the project and guidance for further development!
-
-
-# rmq-websockets
