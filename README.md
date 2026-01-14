@@ -216,6 +216,13 @@ kubectl exec upstream-rabbit-new-server-0 -- rabbitmqctl set_permissions  -p / a
 kubectl exec upstream-rabbit-new-server-0 -- rabbitmqctl set_user_tags arul administrator
 
 ```
+
+
+```
+ k port-forward svc/upstream-rabbit-new 15678:15678
+ k port-forward svc/upstream-rabbit-new 15672:15672
+ k port-forward svc/upstream-rabbit-new 5672:5672
+```
 ---
 
 I hope this detailed `README.md` provides a comprehensive overview of the project and guidance for further development!
