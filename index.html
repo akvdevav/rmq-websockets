@@ -22,7 +22,7 @@
         <input type="text" id="msgInput" placeholder="Type a message..." disabled>
         <button id="sendBtn" onclick="sendMessage()" disabled>Send Message</button>
     </div>
-    
+
     <h3>Connection Log</h3>
     <div id="log"></div>
 
@@ -31,7 +31,7 @@
         // 1. Port 15678 is the standard Web AMQP port.
         // 2. The path /ws is defined by the RabbitMQ plugin.
         const BROKER_URL = 'ws://localhost:15678/ws';
-        
+
         // YOUR CREDENTIALS
         const USERNAME = 'arul';
         const PASSWORD = 'password';
@@ -56,7 +56,7 @@
 
                 sender = context.connection.open_sender('q.test');
                 receiver = context.connection.open_receiver('q.test');
-                
+
                 receiver.on('message', function(context) {
                     log('RECEIVED: ' + context.message.body.toString());
                 });
@@ -93,7 +93,7 @@
         function sendMessage() {
             const input = document.getElementById('msgInput');
             const message = input.value;
-            
+
             if (sender && connection.is_open()) {
                 sender.send({ body: message });
                 log('SENT: ' + message);

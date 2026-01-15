@@ -18,7 +18,7 @@ import { Client } from '@stomp/stompjs';
 const RABBITMQ_CONFIG = {
     // Note: 'ws' (WebSocket) or 'wss' (Secure WebSocket)
     // Port 15674 is standard for Web STOMP. Do NOT use 5672.
-    brokerURL: 'ws://localhost:15674/ws',
+    brokerURL: 'ws://localhost:15678/ws',
     username: 'arul',
     password: 'password',
     reconnectDelay: 5000,

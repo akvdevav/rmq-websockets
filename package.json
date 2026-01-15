@@ -1,0 +1,15 @@
+{
+  "name": "rmq-web-loadtest",
+  "version": "0.1.0",
+  "description": "Simple RabbitMQ Web-AMQP load tester using rhea + ws",
+  "main": "loadtest.js",
+  "scripts": {
+    "loadtest": "node loadtest.js"
+  },
+  "dependencies": {
+    "ws": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
