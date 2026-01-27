@@ -46,6 +46,8 @@ spec:
       - rabbitmq_shovel_management
       - rabbitmq_standby_replication
       - rabbitmq_web_amqp
+      - rabbitmq_web_stomp
+      - rabbitmq_web_mqtt
     # additionalConfig: |
     #   schema_definition_sync.operating_mode = upstream
     #   standby.replication.operating_mode = upstream
