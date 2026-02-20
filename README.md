@@ -256,7 +256,7 @@ kubectl -n rabbitmq-system --restart=Always run arul-perf2 --image=pivotalrabbit
 ```
 
 ```
-for i in `kgp -n rabbitmq-system | grep notls | awk '{print $1}'`; do echo "k -n rabbitmq-system  exec $i -i --  rabbitmqctl list_queues name type | grep quorum | awk '{print $2}' | sort | uniq -c" ; done
+k -n rabbitmq-system  exec notls-rabbit-server-0 -i --  rabbitmqctl list_queues name type | grep quorum | awk '{print $2}' | sort | uniq -c
 ```
 
 ---
