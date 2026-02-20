@@ -255,6 +255,10 @@ kubectl -n rabbitmq-system --restart=Always run arul-perf2 --image=pivotalrabbit
 --consumer-latency 10
 ```
 
+```
+for i in `kgp -n rabbitmq-system | grep notls | awk '{print $1}'`; do echo "k -n rabbitmq-system  exec $i -i --  rabbitmqctl list_queues name type | grep quorum | awk '{print $2}' | sort | uniq -c" ; done
+```
+
 ---
 
 I hope this detailed `README.md` provides a comprehensive overview of the project and guidance for further development!

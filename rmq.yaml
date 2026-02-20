@@ -33,6 +33,10 @@ spec:
   imagePullSecrets:
     - name: tanzu-rabbitmq-registry-creds
   replicas: 3
+  tls:
+    secretName: rabbitmq-server-tls
+    # Setting this to true ensures management UI and AMQP use TLS
+    caSecretName: rabbitmq-server-tls
   rabbitmq:
     additionalPlugins:
       - rabbitmq_stream
