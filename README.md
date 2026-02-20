@@ -223,6 +223,38 @@ kubectl exec upstream-rabbit-new-server-0 -- rabbitmqctl set_user_tags arul admi
  k port-forward svc/upstream-rabbit-new 15672:15672
  k port-forward svc/upstream-rabbit-new 5672:5672
 ```
+
+```
+instance=notls-rabbit
+username=$(kubectl -n rabbitmq-system   get secret ${instance}-default-user -o jsonpath="{.data.username}" | base64 --decode)
+password=$(kubectl -n rabbitmq-system   get secret ${instance}-default-user -o jsonpath="{.data.password}" | base64 --decode)
+service=${instance}
+echo $username
+echo $password
+
+
+
+kubectl -n rabbitmq-system --restart=Always run arul-perf2 --image=pivotalrabbitmq/perf-test -- \
+--uri "amqp://${username}:${password}@${service}" \
+-z 1800 \
+-f persistent \
+-q 1000 \
+-c 1000 \
+-ct -1 \
+-ad false \
+--rate 50 \
+--size 1024 \
+--queue-pattern 'perf-test-%d' \
+--queue-pattern-from 1 \
+--queue-pattern-to 100 \
+-qa auto-delete=false,durable=true,x-queue-type=quorum \
+--producers 1 \
+--consumers 100 \
+-t fanout \
+-e "fanout-test-exchange" \
+--consumer-latency 10
+```
+
 ---
 
 I hope this detailed `README.md` provides a comprehensive overview of the project and guidance for further development!
